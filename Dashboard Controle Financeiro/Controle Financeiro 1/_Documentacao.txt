@@ -1,0 +1,50 @@
+Anotações importantes para desenvolvimento de um controle de finanças pessoais
+
+Indicadores
+
+-Criar uma opção para a quantidade ou percentual que você quer guardar no fim do mês
+-Comparativo mês a mês
+-Visualizar situação futura com base nos gastos até a data atual
+-Criar um indicador para informar geralmente o percentual que você utiliza do limite do cartão e fazer um comparativo com o mês anterior
+-Tratar investimento como boleto, não espere o fim do mês chegar, sempre separe assim que seu salário entrar.
+-Mostrar o que vai sobrar no mês e diluir isso para mim nos dias que restam para acabar o mês, assim sei quanto passo gastar por dia para não ficar no vermelho.
+-Crie limites de orçamento, para os valores que restarem no seu orçamento coloque essas categorias em hierarquia de maior importancia e defina um percentual para cada uma
+	Exemplo: Alimentação, Transporte, Lazer, Saúde... (40%,30%,20%,10%) você que irá informar o percentual mês a mês para cada categoria IMPORTANTE.
+-Mostrar com base nas minhas despesas fixas, quanto eu preciso juntar para viver 1,2 anos sem trabalhar...(Crie um parametro para ficar mais flexível)
+-Dados do seu salário com descontos e afins... Para conseguirmos analisar sua evolução salarial
+
+
+Estruturação
+
+***Período (Ano, Mês, Dia) (dCalendario)	
+	
+***Receita/Despesa/Transferência (R/D/T) - Pensar como fazer esse tratamento de transferencia (dTransacoes)
+
+***Descrição da movimentação ( Conta de água, conta de luz...) (dMovimentacoes)
+
+***Nome do estabelecimento (dEstabelecimentos)
+
+***Categorias (Moradia, Educação, Presentes, Transportes...) (dCategorias)
+
+***Tipo de Despesa (Fixa ou variável) (dDespesas)
+
+***Bancos (Itaú, Nubank...) (dBancos)
+
+***Contas Bancárias (Ag, Conta, Banco, Tipo Conta) (dContasBancarias)
+
+***Importancia dos gastos (Essencial/Não Essencial) (dImportanciaGastos)
+
+***Cadastro de Cartões de Crédito e limites de cada cartão (fLimitesCartoes)
+	-Importante para analisarmos se não estamos estrapolando o limite do cartão de crédito, e fazer uma análise da evolução da utilização dele.
+
+***Cadastro de Cartões de Crédito (dCartoes)
+	-Cadastro dos cartões de crédito, onde mostramos o limite de cada cartão
+
+***Separar o salário e diluir os descontos, para futuramente analisarmos a evolução salárial e futuramente fazer uma projeção (fSalarios e dCarteiraTrabalho)
+
+***Incluir uma opção de valor de investimentos (criptos) - ter a possibilidade de analisar isso mensalmente e verificar se está no negativo ou no positivo. (fInvestimentos)
+	-Analisar e ver a possibilidade de utilizar as demais dimensões que serão utilizadas para preencher a a fMovimetacoes, para evitarmos ambiguidade.
+
+***Colocar metas para juntar dinheiro até o fim de cada ano, e crie uma opção para ser diluido isso mês a mês para você atingir seu objetivo (fMetas e dMetas)
+	-Criar a fato meta com intuito de definirmos um objetivo para nossas metas, como por exemplo: Meta de Viagem, Meta para compra de carro, Meta de reforma...
+	
